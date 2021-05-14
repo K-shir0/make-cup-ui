@@ -12,8 +12,6 @@ const CreateTournamentsPage: React.FC = () => {
 
   }
 
-
-
   return (
     <>
       <h1>作成</h1>

@@ -2,6 +2,7 @@ import React, {useRef, useLayoutEffect} from "react";
 import {match} from "assert";
 
 const tournament: React.FC = () => {
+  // 人数
   const num = 16;
   const inputHeight = 32;
 
