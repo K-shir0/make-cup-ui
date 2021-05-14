@@ -1,1 +1,10 @@
-{}
+{
+  "auth": {
+    "makecupui81c62e6a": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
