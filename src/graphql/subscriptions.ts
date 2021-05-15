@@ -41,3 +41,42 @@ export const onDeleteUser = /* GraphQL */ `
     }
   }
 `;
+export const onCreateTournament = /* GraphQL */ `
+  subscription OnCreateTournament {
+    onCreateTournament {
+      id
+      author
+      tournamentName
+      startTime
+      maximumNumberOfParticipants
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateTournament = /* GraphQL */ `
+  subscription OnUpdateTournament {
+    onUpdateTournament {
+      id
+      author
+      tournamentName
+      startTime
+      maximumNumberOfParticipants
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteTournament = /* GraphQL */ `
+  subscription OnDeleteTournament {
+    onDeleteTournament {
+      id
+      author
+      tournamentName
+      startTime
+      maximumNumberOfParticipants
+      createdAt
+      updatedAt
+    }
+  }
+`;

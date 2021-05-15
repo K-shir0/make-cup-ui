@@ -5,3 +5,11 @@ type User @model {
   description: String
   image: String
 }
+
+type Tournament @model {
+  id: ID!
+  author: ID
+  tournamentName: String!
+  startTime: String!
+  maximumNumberOfParticipants: Int!
+}

@@ -1,4 +1,8 @@
 import React, {useState} from "react";
+import {Auth} from "@aws-amplify/auth";
+import {API} from "@aws-amplify/api";
+import {createTournament} from "../../src/graphql/mutations";
+import {GRAPHQL_AUTH_MODE} from '@aws-amplify/api-graphql'
 
 const CreateTournamentsPage: React.FC = () => {
   const [state, setState] = useState({
@@ -33,8 +37,28 @@ const CreateTournamentsPage: React.FC = () => {
           <input type="number" name="maximumNumberOfParticipants"
                  onChange={(e) => handleInputChange(e)}/>
         </label>
-        <button onClick={() => {
+        <button onClick={async () => {
           console.log(state)
+
+          const currentUser = await Auth.currentAuthenticatedUser();
+
+          try {
+            const result = await API.graphql({
+              authMode: GRAPHQL_AUTH_MODE.AMAZON_COGNITO_USER_POOLS,
+              query: createTournament,
+              variables: {
+                input: {
+                  ...state
+                },
+              },
+            });
+
+            console.log(result)
+
+          } catch (e) {
+            console.log(e);
+          }
+
         }}>作成
         </button>
       </div>

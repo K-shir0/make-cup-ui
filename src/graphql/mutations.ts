@@ -50,3 +50,51 @@ export const deleteUser = /* GraphQL */ `
     }
   }
 `;
+export const createTournament = /* GraphQL */ `
+  mutation CreateTournament(
+    $input: CreateTournamentInput!
+    $condition: ModelTournamentConditionInput
+  ) {
+    createTournament(input: $input, condition: $condition) {
+      id
+      author
+      tournamentName
+      startTime
+      maximumNumberOfParticipants
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateTournament = /* GraphQL */ `
+  mutation UpdateTournament(
+    $input: UpdateTournamentInput!
+    $condition: ModelTournamentConditionInput
+  ) {
+    updateTournament(input: $input, condition: $condition) {
+      id
+      author
+      tournamentName
+      startTime
+      maximumNumberOfParticipants
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteTournament = /* GraphQL */ `
+  mutation DeleteTournament(
+    $input: DeleteTournamentInput!
+    $condition: ModelTournamentConditionInput
+  ) {
+    deleteTournament(input: $input, condition: $condition) {
+      id
+      author
+      tournamentName
+      startTime
+      maximumNumberOfParticipants
+      createdAt
+      updatedAt
+    }
+  }
+`;

@@ -35,3 +35,36 @@ export const listUsers = /* GraphQL */ `
     }
   }
 `;
+export const getTournament = /* GraphQL */ `
+  query GetTournament($id: ID!) {
+    getTournament(id: $id) {
+      id
+      author
+      tournamentName
+      startTime
+      maximumNumberOfParticipants
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listTournaments = /* GraphQL */ `
+  query ListTournaments(
+    $filter: ModelTournamentFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listTournaments(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        author
+        tournamentName
+        startTime
+        maximumNumberOfParticipants
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
